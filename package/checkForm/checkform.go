@@ -2,9 +2,10 @@ package checkform
 
 import (
 	"strconv"
-	"trungpham/gowebbasic/package/auth"
-	errmsg "trungpham/gowebbasic/package/logMessages"
-	"trungpham/gowebbasic/package/namestand"
+
+	"github.com/phamtrung99/gowebbasic/package/auth"
+	errmsg "github.com/phamtrung99/gowebbasic/package/logMessages"
+	"github.com/phamtrung99/gowebbasic/package/namestand"
 
 	"github.com/labstack/echo/v4"
 )

@@ -4,11 +4,12 @@ import (
 	"net/http"
 	"strconv"
 	"time"
-	"trungpham/gowebbasic/config"
-	"trungpham/gowebbasic/models"
-	checkform "trungpham/gowebbasic/package/checkForm"
-	"trungpham/gowebbasic/package/pagination"
-	"trungpham/gowebbasic/repositories"
+
+	"github.com/phamtrung99/gowebbasic/config"
+	"github.com/phamtrung99/gowebbasic/models"
+	checkform "github.com/phamtrung99/gowebbasic/package/checkForm"
+	"github.com/phamtrung99/gowebbasic/package/pagination"
+	"github.com/phamtrung99/gowebbasic/repositories"
 
 	echo "github.com/labstack/echo/v4"
 )

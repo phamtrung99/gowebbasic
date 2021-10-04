@@ -2,7 +2,8 @@ package pagination
 
 import (
 	"strconv"
-	checkform "trungpham/gowebbasic/package/checkForm"
+
+	checkform "github.com/phamtrung99/gowebbasic/package/checkForm"
 
 	"github.com/labstack/echo/v4"
 )
@@ -20,10 +21,10 @@ func GetPageQueryParam(c echo.Context) (bool, string, int) {
 }
 
 func CountTotalPage(totalResult int64, rowPerPage int64) int64 {
-	
+
 	if totalResult%rowPerPage > 0 {
 		return (totalResult / rowPerPage) + 1
 	}
-	
+
 	return totalResult / rowPerPage
 }

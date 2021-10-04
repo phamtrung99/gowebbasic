@@ -6,7 +6,8 @@ import (
 	"mime/multipart"
 	"net/http"
 	"os"
-	errmsg "trungpham/gowebbasic/package/logMessages"
+
+	errmsg "github.com/phamtrung99/gowebbasic/package/logMessages"
 )
 
 var appErr = errmsg.NewFileMsg()

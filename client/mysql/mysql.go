@@ -12,7 +12,7 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/plugin/dbresolver"
 
-	"trungpham/gowebbasic/config"
+	"github.com/phamtrung99/gowebbasic/config"
 )
 
 var (

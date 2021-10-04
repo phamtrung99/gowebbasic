@@ -7,8 +7,8 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 
-	"trungpham/gowebbasic/config"
-	"trungpham/gowebbasic/models"
+	"github.com/phamtrung99/gowebbasic/config"
+	"github.com/phamtrung99/gowebbasic/models"
 )
 
 type JwtCustomClaims struct {
@@ -39,7 +39,7 @@ func GetUserInfFromToken(c echo.Context) *UserInfo {
 
 	user := c.Get("user").(*jwt.Token)
 	claims := user.Claims.(*JwtCustomClaims)
-	
+
 	return &UserInfo{
 		claims.UserInfo.ID,
 		claims.UserInfo.Email,

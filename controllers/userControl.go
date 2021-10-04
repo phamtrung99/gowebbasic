@@ -9,15 +9,15 @@ import (
 	"github.com/golang-jwt/jwt"
 	echo "github.com/labstack/echo/v4"
 
-	"trungpham/gowebbasic/config"
-	"trungpham/gowebbasic/middlewares"
-	"trungpham/gowebbasic/models"
-	"trungpham/gowebbasic/package/auth"
-	checkform "trungpham/gowebbasic/package/checkForm"
-	imgvalid "trungpham/gowebbasic/package/fileValid"
-	errmsg "trungpham/gowebbasic/package/logMessages"
-	"trungpham/gowebbasic/package/pagination"
-	"trungpham/gowebbasic/repositories"
+	"github.com/phamtrung99/gowebbasic/config"
+	"github.com/phamtrung99/gowebbasic/middlewares"
+	"github.com/phamtrung99/gowebbasic/models"
+	"github.com/phamtrung99/gowebbasic/package/auth"
+	checkform "github.com/phamtrung99/gowebbasic/package/checkForm"
+	imgvalid "github.com/phamtrung99/gowebbasic/package/fileValid"
+	errmsg "github.com/phamtrung99/gowebbasic/package/logMessages"
+	"github.com/phamtrung99/gowebbasic/package/pagination"
+	"github.com/phamtrung99/gowebbasic/repositories"
 )
 
 type UserControl struct {

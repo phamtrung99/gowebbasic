@@ -6,7 +6,7 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 
-	"trungpham/gowebbasic/config"
+	"github.com/phamtrung99/gowebbasic/config"
 )
 
 func ConnectMysqlInit() *gorm.DB {

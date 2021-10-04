@@ -3,11 +3,12 @@ package controllers
 import (
 	"net/http"
 	"strconv"
-	"trungpham/gowebbasic/middlewares"
-	"trungpham/gowebbasic/models"
-	checkform "trungpham/gowebbasic/package/checkForm"
-	"trungpham/gowebbasic/package/namestand"
-	"trungpham/gowebbasic/repositories"
+
+	"github.com/phamtrung99/gowebbasic/middlewares"
+	"github.com/phamtrung99/gowebbasic/models"
+	checkform "github.com/phamtrung99/gowebbasic/package/checkForm"
+	"github.com/phamtrung99/gowebbasic/package/namestand"
+	"github.com/phamtrung99/gowebbasic/repositories"
 
 	echo "github.com/labstack/echo/v4"
 )

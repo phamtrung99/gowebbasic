@@ -3,8 +3,9 @@ package repositories
 import (
 	"fmt"
 	"log"
-	"trungpham/gowebbasic/config"
-	"trungpham/gowebbasic/models"
+
+	"github.com/phamtrung99/gowebbasic/config"
+	"github.com/phamtrung99/gowebbasic/models"
 
 	"gorm.io/gorm"
 )
@@ -112,8 +113,6 @@ func (repo *MovieRepo) SearchMovie(str string, filter models.Filter, page int) (
 		filterAdult + " " +
 		filterRate + " " +
 		filterName
-
-
 
 	totalResult := repo.db.Raw(queryStr).Scan(&[]models.Movie{}).RowsAffected
 

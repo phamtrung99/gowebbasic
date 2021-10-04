@@ -6,8 +6,8 @@ import (
 
 	"gorm.io/gorm"
 
-	"trungpham/gowebbasic/models"
-	"trungpham/gowebbasic/package/auth"
+	"github.com/phamtrung99/gowebbasic/models"
+	"github.com/phamtrung99/gowebbasic/package/auth"
 )
 
 type UserRepo struct {
@@ -228,9 +228,8 @@ func (repo *UserRepo) GetFavoriteUserMovies(userID int) []int {
 	}
 
 	for i := 0; i < len(userFavor); i++ {
-		result = append(result, userFavor[i].MovieID) 
+		result = append(result, userFavor[i].MovieID)
 	}
-	
 
 	return result
 }

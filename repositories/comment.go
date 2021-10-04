@@ -2,7 +2,8 @@ package repositories
 
 import (
 	"log"
-	"trungpham/gowebbasic/models"
+
+	"github.com/phamtrung99/gowebbasic/models"
 
 	"gorm.io/gorm"
 )
@@ -28,7 +29,7 @@ func (repo *CmtRepo) InsertComment(comment *models.Comment) bool {
 	return true
 }
 
-func (repo *CmtRepo) GetParentCommentByIDMovie(movieID int) ([]models.Comment) {
+func (repo *CmtRepo) GetParentCommentByIDMovie(movieID int) []models.Comment {
 	query := repo.db.Table("comments")
 	var listComment []models.Comment
 

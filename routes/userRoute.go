@@ -1,11 +1,11 @@
 package routes
 
 import (
-	"github.com/labstack/echo/v4/middleware"
 	echo "github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 
-	"trungpham/gowebbasic/controllers"
-	"trungpham/gowebbasic/middlewares"
+	"github.com/phamtrung99/gowebbasic/controllers"
+	"github.com/phamtrung99/gowebbasic/middlewares"
 )
 
 type UserRoute struct {
