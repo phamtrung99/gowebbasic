@@ -14,9 +14,9 @@ gci:
 	gci -w -local trungpham/gowebbasic .
 
 migratedown:
-	migrate -path migrations --database "mysql://root:Teotu_19@tcp(127.0.0.1:3306)/the_movie_db?charset=utf8mb4&parseTime=True" --verbose down
+	migrate -path migration--database "mysql://root:Teotu_19@tcp(127.0.0.1:3306)/the_movie_db?charset=utf8mb4&parseTime=True" --verbose down
 
 migrateup:
-	migrate -path migrations --database "mysql://root:Teotu_19@tcp(127.0.0.1:3306)/the_movie_db?charset=utf8mb4&parseTime=True" --verbose up
+	migrate -path migration --database "mysql://root:Teotu_19@tcp(127.0.0.1:3306)/the_movie_db?charset=utf8mb4&parseTime=True" --verbose up
 
 

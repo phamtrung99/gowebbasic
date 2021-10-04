@@ -1,13 +1,25 @@
 package main
 
 import (
-	"log"
+	"time"
+
+	"github.com/phamtrung99/gowebbasic/client/mysql"
 	"github.com/phamtrung99/gowebbasic/config"
+	"github.com/phamtrung99/gowebbasic/migration"
 )
 
 func main() {
 	cfg := config.GetConfig()
-	log.Fatal(cfg.MySQL)
+
+	// setup locale
+	{
+		loc, _ := time.LoadLocation(cfg.TimeZone)
+		time.Local = loc
+	}
+
+	mysql.Init()
+	migration.Up()
+
 }
 
 // func main() {

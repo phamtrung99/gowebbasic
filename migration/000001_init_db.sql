@@ -1,3 +1,5 @@
+-- +goose Up
+-- +goose StatementBegin
 CREATE TABLE `movies` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `is_adult` tinyint(4) NOT NULL DEFAULT 0,
@@ -17,29 +19,39 @@ CREATE TABLE `movies` (
   `deleted_at` datetime
 );
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 CREATE TABLE `categories` (
   `id` int(5) PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(128) NOT NULL
 );
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 CREATE TABLE `producers` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `logo_path` varchar(128) NOT NULL,
   `name` varchar(50) NOT NULL
 );
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 CREATE TABLE `movie_categories` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `movie_id` bigint(20) NOT NULL,
   `cate_id` int NOT NULL
 );
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 CREATE TABLE `movie_producers` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `movie_id` bigint(20) NOT NULL,
   `producer_id` int NOT NULL
 );
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 CREATE TABLE `actors` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(128) NOT NULL,
@@ -54,6 +66,8 @@ CREATE TABLE `actors` (
   `deleted_at` datetime
 );
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 CREATE TABLE `movie_actors` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `movie_id` bigint(20) NOT NULL,
@@ -62,6 +76,8 @@ CREATE TABLE `movie_actors` (
   `is_main_actor` tinyint(4) DEFAULT 0 COMMENT '0: not main actor, 1: main actor'
 );
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 CREATE TABLE `users` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `full_name` varchar(128) NOT NULL,
@@ -76,6 +92,8 @@ CREATE TABLE `users` (
   `deleted_at` datetime DEFAULT null
 );
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 CREATE TABLE `comments` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `parent_id` bigint(20),
@@ -87,6 +105,8 @@ CREATE TABLE `comments` (
   `deleted_at` datetime
 );
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 CREATE TABLE `movie_ratings` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `user_id` bigint(20) NOT NULL,
@@ -94,13 +114,16 @@ CREATE TABLE `movie_ratings` (
   `rating` tinyint(4)
 );
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 CREATE TABLE `user_favorites` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `user_id` bigint(20) NOT NULL,
   `movie_id` bigint(20) NOT NULL
 );
 
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 CREATE TABLE `view_histories` (
   `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
   `user_id` bigint(20) NOT NULL,
@@ -109,10 +132,14 @@ CREATE TABLE `view_histories` (
   `last_view_at` datetime
 );
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 INSERT INTO `users` VALUES 
 (1,'Trung Pham Quoc','/public/avatar/1.png','teotu@gmail.com','$2a$10$AJSsJPJxrs0Fz1VX4xuNNO7y/75By2GstSQe84egXtC8GG7cDaQS6',19,'user','','2021-09-29 00:35:33','2021-09-29 08:16:14',NULL),
 (2,'admin','/public/avatar/2.jpeg','admin@gmail.com','$2a$10$f9FmMgC3KUBixQG7Y7CjOe0e9pj4/BJubbWfTbNY0/dvwYLXvc5hu',30,'admin','','2021-09-29 02:26:52','2021-09-29 09:26:52',NULL);
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 INSERT INTO `categories` VALUES 
 (1,'Action'),
  (2,'Adventure'),
@@ -134,9 +161,13 @@ INSERT INTO `categories` VALUES
  (18,'War'),
  (19,'Western');
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 INSERT INTO `comments` ( id, parent_id, actor_id, movie_id, content, created_at, updated_at)VALUES 
 (1,1,1,1,"blank", '2021-09-30','2021-09-30');
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 INSERT INTO `movies` (is_adult,image,original_language,original_title,overview,popularity ,movie_link, release_date, duration, spoken_language, rating_average, status) VALUES
     (0,'https://image.tmdb.org/t/p/w500/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg','en','Free Guy','A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.',5418.816,'https://youtu.be/KYQNUZrvnew','2021-08-11',7800,'en',7.9,1),
     (0,'https://image.tmdb.org/t/p/w500/uIXF0sQGXOxQhbaEaKOi2VYlIL0.jpg','en','Snake Eyes: G.I. Joe Origins','After saving the life of their heir apparent, tenacious loner Snake Eyes is welcomed into an ancient Japanese clan called the Arashikage where he is taught the ways of the ninja warrior. But, when secrets from his past are revealed, Snake Eyes'''' honor and allegiance will be tested – even if that means losing the trust of those closest to him.',2958.528,'https://youtu.be/KYQNUZrvnew','2021-07-22',10300,'en',7,1),
@@ -197,6 +228,8 @@ INSERT INTO `movies` (is_adult,image,original_language,original_title,overview,p
     (0,'https://image.tmdb.org/t/p/w500/bShgiEQoPnWdw4LBrYT5u18JF34.jpg','en','The Unholy','Alice, a young hearing-impaired girl who, after a supposed visitation from the Virgin Mary, is inexplicably able to hear, speak and heal the sick. As word spreads and people from near and far flock to witness her miracles, a disgraced journalist hoping to revive his career visits the small New England town to investigate. When terrifying events begin to happen all around, he starts to question if these phenomena are the works of the Virgin Mary or something much more sinister.',357.532,'https://youtu.be/KYQNUZrvnew','2021-03-31',10300,'en',6.9,1),
     (0,'https://image.tmdb.org/t/p/w500/nxxuWC32Y6TULj4VnVwMPUFLIpK.jpg','en','Seobok','A former intelligence agent gets involved with the first human clone, Seo Bok, who others seek, causing trouble.',329.896,'https://youtu.be/KYQNUZrvnew','2021-04-12',9000,'en',7.4,2);
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 INSERT INTO actors (name,birthday ,deathday,gender,place_of_birth,popularity,avatar)VALUES
     ('Katherine LaNasa',NULL,NULL,0,'New Orleans, Louisiana, USA',491.278,'https://image.tmdb.org/t/p/w500/a1T5Smn7sCEtV8NHvTa5WaxgOML.jpg'),
     ('Jackie Chan',NULL,NULL,1,'New Orleans, Louisiana, USA',56.44,'https://image.tmdb.org/t/p/w500/nraZoTzwJQPHspAVsKfgl3RXKKa.jpg'),
@@ -239,6 +272,8 @@ INSERT INTO actors (name,birthday ,deathday,gender,place_of_birth,popularity,ava
     ('Tom Holland',NULL,NULL,0,'New Orleans, Louisiana, USA',25.182,'https://image.tmdb.org/t/p/w500/2qhIDp44cAqP2clOgt2afQI07X8.jpg'),
     ('Rachel Weisz',NULL,NULL,1,'New Orleans, Louisiana, USA',24.907,'https://image.tmdb.org/t/p/w500/3QbFXeiUzXUVUrJ7fdiCn7A7ReW.jpg');
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 INSERT INTO movie_actors(movie_id, actor_id, character_name, is_main_actor)  VALUES
     (1,1,'Captain ',0),
     (1,2,'Captain ',1),
@@ -333,6 +368,8 @@ INSERT INTO movie_actors(movie_id, actor_id, character_name, is_main_actor)  VAL
     (57,11,'Captain ',1),
     (58,12,'Captain ',1);
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 INSERT INTO movie_categories (movie_id, cate_id)VALUES
     (1,1),
     (2,2),
@@ -393,32 +430,66 @@ INSERT INTO movie_categories (movie_id, cate_id)VALUES
     (57,3),
     (58,4);
 
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `movie_categories` ADD FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `movie_categories` ADD FOREIGN KEY (`cate_id`) REFERENCES `categories` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `movie_producers` ADD FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `movie_producers` ADD FOREIGN KEY (`producer_id`) REFERENCES `producers` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `movie_actors` ADD FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `movie_actors` ADD FOREIGN KEY (`actor_id`) REFERENCES `actors` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `comments` ADD FOREIGN KEY (`parent_id`) REFERENCES `comments` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `comments` ADD FOREIGN KEY (`actor_id`) REFERENCES `users` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `comments` ADD FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `movie_ratings` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `movie_ratings` ADD FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `view_histories` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `view_histories` ADD FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `user_favorites` ADD FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
+-- +goose StatementEnd
+-- +goose StatementBegin
 ALTER TABLE `user_favorites` ADD FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`);
+-- +goose StatementEnd
+
+
+-- +goose Down
+-- +goose StatementBegin
+DROP TABLE IF EXISTS `movie_producers`;
+DROP TABLE IF EXISTS `producers`;
+DROP TABLE IF EXISTS `movie_categories`;
+DROP TABLE IF EXISTS `categories`;
+DROP TABLE IF EXISTS `movie_ratings`;
+DROP TABLE IF EXISTS `movie_actors`;
+DROP TABLE IF EXISTS `actors`;
+DROP TABLE IF EXISTS `comments`;
+DROP TABLE IF EXISTS `view_histories`;
+DROP TABLE IF EXISTS `user_favorites`;
+DROP TABLE IF EXISTS `movies`;
+DROP TABLE IF EXISTS `users`;
+-- +goose StatementEnd

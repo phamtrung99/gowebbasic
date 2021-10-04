@@ -8,11 +8,10 @@ import (
 
 	"github.com/phamtrung99/gopkg/logger"
 	"github.com/phamtrung99/gopkg/utils"
+	"github.com/phamtrung99/gowebbasic/config"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/plugin/dbresolver"
-
-	"github.com/phamtrung99/gowebbasic/config"
 )
 
 var (

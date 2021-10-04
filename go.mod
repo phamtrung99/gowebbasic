@@ -27,6 +27,7 @@ require (
 	github.com/omeid/livereload v0.0.0-20180903043807-18d58b752b26 // indirect
 	github.com/phamtrung99/gopkg v0.0.0-20211004070841-b3b9f1a32ca6 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
+	github.com/pressly/goose v2.7.0+incompatible // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.1 // indirect
