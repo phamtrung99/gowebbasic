@@ -1,0 +1,53 @@
+linters:
+  enable-all: true
+  disable:
+    - gochecknoglobals
+    - gochecknoinits
+    - gomnd
+    - gocognit
+    - funlen
+    - goerr113
+    - gofumpt
+    - wrapcheck
+    - exhaustivestruct
+    - ifshort
+    - forcetypeassert
+    - errorlint
+    - cyclop
+    - gomoddirectives
+    - maligned
+    - scopelint
+    - interfacer
+    - golint
+
+run:
+  timeout: 20m
+  skip-dirs:
+    - build
+    - tmp
+    - scripts
+
+  # include test files or not, default is true
+  tests: false
+
+issues:
+  exclude-use-default: true
+
+linters-settings:
+  nestif:
+    min-complexity: 100
+  goconst:
+    min-occurrences: 5
+  gocyclo:
+    min-complexity: 100
+  lll:
+    line-length: 200
+  tagliatelle:
+    case:
+      use-field-name: true
+      rules:
+        # any struct tag type can be used.
+        # support string case: `camel`, `pascal`, `kebab`, `snake`, `goCamel`, `goPascal`, `goKebab`, `goSnake`, `upper`, `lower`
+        json: snake
+  gci:
+    local-prefixes: trungpham/gowebbasic
