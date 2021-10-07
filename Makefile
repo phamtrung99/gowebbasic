@@ -13,10 +13,10 @@ gci:
 	@GO111MODULE=off go get github.com/daixiang0/gci
 	gci -w -local trungpham/gowebbasic .
 
-migratedown:
-	migrate -path migration--database "mysql://root:Teotu_19@tcp(127.0.0.1:3306)/the_movie_db?charset=utf8mb4&parseTime=True" --verbose down
+# migratedown:
+# 	migrate -path migration--database "mysql://root:Teotu_19@tcp(127.0.0.1:3306)/the_movie_db?charset=utf8mb4&parseTime=True" --verbose down
 
-migrateup:
-	migrate -path migration --database "mysql://root:Teotu_19@tcp(127.0.0.1:3306)/the_movie_db?charset=utf8mb4&parseTime=True" --verbose up
+# migrateup:
+# 	migrate -path migration --database "mysql://root:Teotu_19@tcp(127.0.0.1:3306)/the_movie_db?charset=utf8mb4&parseTime=True" --verbose up
 
 

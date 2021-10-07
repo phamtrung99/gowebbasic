@@ -20,6 +20,8 @@ func main() {
 	mysql.Init()
 	migration.Up()
 
+	repo := repository.New(mysql.GetClient)
+
 }
 
 // func main() {

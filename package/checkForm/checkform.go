@@ -2,6 +2,7 @@ package checkform
 
 import (
 	"strconv"
+	"strings"
 
 	"github.com/phamtrung99/gowebbasic/package/auth"
 	errmsg "github.com/phamtrung99/gowebbasic/package/logMessages"
@@ -111,6 +112,12 @@ func CheckFormatValue(formAtributeName string, value string) (bool, string) {
 			return false, appErr.QueryMsg.StatusWrong
 		}
 		return true, value
+	case "password":
+		str := namestand.FormatText(value, true, true)
+		if str == "" || len(str) < 8 || strings.Contains(str," ") {
+			return false, formAtributeName + appErr.QueryMsg.WrongFomat
+		}
+		return true, str
 	default:
 		return true, value
 	}

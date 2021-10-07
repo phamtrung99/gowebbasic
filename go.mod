@@ -3,6 +3,9 @@ module github.com/phamtrung99/gowebbasic
 go 1.17
 
 require (
+	github.com/DataDog/datadog-go v4.8.2+incompatible // indirect
+	github.com/DataDog/sketches-go v1.2.0 // indirect
+	github.com/Microsoft/go-winio v0.5.0 // indirect
 	github.com/cespare/xxhash/v2 v2.1.1 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
@@ -13,6 +16,7 @@ require (
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/golang-migrate/migrate v3.5.4+incompatible // indirect
+	github.com/google/uuid v1.3.0 // indirect
 	github.com/gorilla/websocket v1.4.1 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.2 // indirect
@@ -26,9 +30,11 @@ require (
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/omeid/livereload v0.0.0-20180903043807-18d58b752b26 // indirect
 	github.com/phamtrung99/gopkg v0.0.0-20211004070841-b3b9f1a32ca6 // indirect
+	github.com/philhofer/fwd v1.1.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pressly/goose v2.7.0+incompatible // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
+	github.com/tinylib/msgp v1.1.6 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v1.2.1 // indirect
 	golang.org/x/crypto v0.0.0-20210921155107-089bfa567519 // indirect
@@ -36,6 +42,9 @@ require (
 	golang.org/x/sys v0.0.0-20210927094055-39ccf1dd6fa6 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac // indirect
+	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
+	google.golang.org/protobuf v1.27.1 // indirect
+	gopkg.in/DataDog/dd-trace-go.v1 v1.33.0 // indirect
 	gorm.io/driver/mysql v1.1.2 // indirect
 	gorm.io/gorm v1.21.15 // indirect
 	gorm.io/plugin/dbresolver v1.1.0 // indirect

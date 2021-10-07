@@ -8,7 +8,7 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 
 	"github.com/phamtrung99/gowebbasic/config"
-	"github.com/phamtrung99/gowebbasic/models"
+	"github.com/phamtrung99/gowebbasic/model"
 )
 
 type JwtCustomClaims struct {
@@ -22,7 +22,7 @@ type UserInfo struct {
 	Role  string `json:"role"`
 }
 
-func NewClaims(user *models.User) *JwtCustomClaims {
+func NewClaims(user *model.User) *JwtCustomClaims {
 	return &JwtCustomClaims{
 		UserInfo{
 			user.ID,
