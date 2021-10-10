@@ -71,3 +71,13 @@ func ErrPwdMatching(err error) apperror.AppError {
 		Message:   "retype password not matched.",
 	}
 }
+
+func ErrUserMultipartForm(err error) apperror.AppError {
+	return apperror.AppError{
+		Raw:       err,
+		ErrorCode: 200000070,
+		HTTPCode:  http.StatusNotAcceptable,
+		Info:      "err multipart form user",
+		Message:   "err multipart form user.",
+	}
+}
